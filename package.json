@@ -1,0 +1,52 @@
+{
+  "name": "@actualwave/react-native-swc",
+  "version": "0.1.0",
+  "description": "On-device SWC (Rust) transformer for React Native: TypeScript, JSX, ES module and ES5 lowering with source maps. Optional companion to @actualwave/react-native-hermes-eval.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "react-native": "src/index.ts",
+  "files": [
+    "src",
+    "android",
+    "rust",
+    "scripts",
+    "react-native.config.js",
+    "LICENSE",
+    "THIRD_PARTY_LICENSES.md",
+    "CHANGELOG.md",
+    "!android/build",
+    "!rust/target",
+    "!**/.*"
+  ],
+  "scripts": {
+    "build:android": "bash scripts/build-android.sh",
+    "build": "npm run build:android -- arm64-v8a armeabi-v7a x86_64",
+    "test:rust": "cd rust && cargo test",
+    "typecheck": "tsc --noEmit",
+    "licenses": "node scripts/generate-third-party-licenses.js",
+    "prepublishOnly": "npm run typecheck && npm run test:rust && node scripts/check-prebuilt.js"
+  },
+  "keywords": [
+    "react-native",
+    "android",
+    "swc",
+    "transpiler",
+    "typescript",
+    "jsx",
+    "hermes",
+    "minify",
+    "ast"
+  ],
+  "author": "Oleg Galaburda <burdiuz@gmail.com> (https://github.com/burdiuz)",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "react-native": "0.83.6",
+    "typescript": "^5.9.0"
+  },
+  "sideEffects": false
+}

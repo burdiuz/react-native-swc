@@ -1,0 +1,5 @@
+node_modules
+rust/target
+android/build
+android/src/main/jniLibs
+.history/
