@@ -11,4 +11,4 @@ Initial release.
 - `minify` / `minifySync`, `parse` / `parseSync`, `print` / `printSync`, `analyze` / `analyzeSync`.
 - Syntax errors are reported as `file:line:col: message`.
 - SWC panics are caught and reported as errors (`panic = "unwind"` in the release profile).
-- Android `arm64-v8a` prebuilt library.
+- Android prebuilt libraries for `arm64-v8a`, `armeabi-v7a` and `x86_64`.
