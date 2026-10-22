@@ -184,8 +184,7 @@ Several diagnostics are joined with newlines. Invalid options / AST JSON and an 
 
 | | |
 | --- | --- |
-| Android `arm64-v8a`, `armeabi-v7a`, `x86_64` | prebuilt, shipped in the package |
-| Android `x86` | **not built** |
+| Android `arm64-v8a`, `armeabi-v7a`, `x86`, `x86_64` | prebuilt, shipped in the package |
 | iOS / web | not supported (`isAvailable() === false`) |
 
 The library is loaded when the native module initialises. On an ABI without a matching `.so` the
@@ -193,7 +192,7 @@ app **crashes at launch** with `UnsatisfiedLinkError`; build the ABIs you need
 (see below) or restrict your app's `abiFilters`.
 
 Size, before APK compression (the SWC minifier and transforms are statically linked):
-`arm64-v8a` ~13 MB, `armeabi-v7a` ~8 MB, `x86_64` ~15 MB.
+`arm64-v8a` ~13 MB, `armeabi-v7a` ~8 MB, `x86` ~16 MB, `x86_64` ~15 MB.
 
 ## Behaviour and limits
 
@@ -213,7 +212,7 @@ Needs `rustup`, [`cargo-ndk`](https://github.com/bbqsrc/cargo-ndk) (`cargo insta
 the Android NDK (`ANDROID_NDK_HOME`).
 
 ```bash
-npm run build                                      # arm64-v8a, armeabi-v7a, x86_64
+npm run build                                      # arm64-v8a, armeabi-v7a, x86, x86_64
 npm run build:android                              # arm64-v8a only
 npm run build:android -- arm64-v8a x86_64          # choose ABIs
 npm run test:rust                                  # Rust unit tests (host)

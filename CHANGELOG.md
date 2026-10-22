@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Android prebuilt library for `x86`.
+
 ## 0.1.0
 
 Initial release.

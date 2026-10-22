@@ -10,6 +10,7 @@ for abi in "${ABIS[@]}"; do
     arm64-v8a) rustup target add aarch64-linux-android ;;
     armeabi-v7a) rustup target add armv7-linux-androideabi ;;
     x86_64) rustup target add x86_64-linux-android ;;
+    x86) rustup target add i686-linux-android ;;
   esac
   TARGETS+=(-t "$abi")
 done
